@@ -12,57 +12,85 @@ body {
 .main-content {
     flex: 1;
     padding: 24px;
-    margin: 0 auto;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .site-header {
-    background: #003366;
+    background: #1a66ff;
     color: white;
     padding: 20px;
-}
-
-.site-header h1 {
-    margin: 0;
-    padding-top: 10px;
-    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav-links {
     list-style: none;
-    padding: 0;
-    margin-top: 10px;
     display: flex;
-    gap: 20px;
+    gap: 24px;
+    /* margin-left: auto; */
+    margin-right: 60px;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 .site-footer {
-    background: #003366;
+    background: #1a66ff;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
     text-align: center;
-    padding: 20px;
-    margin-top: auto;
-    font-size: 14px;
 }
 
 .news-item {
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
     margin-bottom: 20px;
     padding-bottom: 20px;
+    padding-left: 10%;
+    padding-right: 5%;
+}
+
+.news-item img {
+    padding-top: 20px;
+    max-width: 500px;
+    max-height: 400px;
+}
+
+.home h1 {
+    padding-left: 5%;
+}
+
+.teachers h1 {
+    padding-left: 5%;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 30px;
 }
 
 .news-item h2 {
     margin: 0;
-    font-size: 20px;
+    font-size: 24px;
 }
 
+
 .news-date {
-    font-size: 14px;
+    font-size: 16px;
     color: gray;
 }
 
@@ -72,14 +100,54 @@ body {
     margin-bottom: 20px;
     border-radius: 5px;
     background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
 }
 
 .teacher-card h2 {
     margin-top: 0;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .teacher-card p {
     margin: 4px 0;
+    font-size: 20px;
+}
+
+.teacher-card img {
+    padding-right: 20px;
+    min-height: 200px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.footer-column p {
+    margin: 8px 0;
     font-size: 14px;
+}
+
+.about {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.about h1,
+.home h1 {
+    font-size: 40px;
+}
+
+.about p {
+    font-size: 24px;
 }

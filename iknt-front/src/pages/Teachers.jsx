@@ -1,14 +1,14 @@
 import TeacherCard from '../components/TeacherCard'
 
 const teachers = [
-    { id: 1, name: 'Иванов Иван Иванович', title: 'д.ф.-м.н., профессор', email: 'ivanov@fakultet.ru' },
-    { id: 2, name: 'Петрова Мария Сергеевна', title: 'к.т.н., доцент', email: 'petrova@fakultet.ru' },
-    { id: 3, name: 'Сидоров Алексей Николаевич', title: 'ассистент', email: 'sidorov@fakultet.ru' }
+    { id: 1, pic: "Sheina.jpg", name: 'Шеина Татьяна Юрьевна', title: 'Старший преподаватель кафедры прикладной математики и информатики', email: 'tsheina@yandex.ru' },
+    { id: 2, pic: "ilinmIV.png", name: 'Ильин Иван Вадимович', title: 'Кандидат педагогических наук, доцент, доцент кафедры информационных систем и математических методов в экономике руководитель образовательной программы бакалавриата по специальности 01.03.02 "Прикладная математика и информатика"', email: 'vania_ilin@mail.ru' },
+    { id: 3, pic: "buzmakova2023.jpg", name: 'Бузмакова Мария Михайловна', title: 'Кандидат физико-математических наук, доцент, доцент кафедры прикладной математики и информатики, заместитель заведующего кафедрой прикладной математики и информатики по науке, главный редактор научного журнала «Вестник Пермского университета. Математика. Механика. Информатика»', email: 'mbuzmakova@psu.ru' }
 ]
 
 export default function Teachers() {
     return (
-        <div>
+        <div className='teachers'>
             <h1>Преподаватели</h1>
             {teachers.map(teacher => <TeacherCard key={teacher.id} teacher={teacher} />)}
         </div>

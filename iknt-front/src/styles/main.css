@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 24px;
+    margin: 0 auto;
+}
+
+.site-header {
+    background: #003366;
+    color: white;
+    padding: 20px;
+}
+
+.site-header h1 {
+    margin: 0;
+    padding-top: 10px;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.site-footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 14px;
+}
+
+.news-item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.news-item h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.news-date {
+    font-size: 14px;
+    color: gray;
+}
+
+.teacher-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.teacher-card h2 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.teacher-card p {
+    margin: 4px 0;
+    font-size: 14px;
+}

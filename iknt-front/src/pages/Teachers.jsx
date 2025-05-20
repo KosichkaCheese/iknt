@@ -1,12 +1,33 @@
 import TeacherCard from '../components/TeacherCard'
+import { useEffect, useState } from 'react'
 
-const teachers = [
-    { id: 1, pic: "Sheina.jpg", name: 'Шеина Татьяна Юрьевна', title: 'Старший преподаватель кафедры прикладной математики и информатики', email: 'tsheina@yandex.ru' },
-    { id: 2, pic: "ilinmIV.png", name: 'Ильин Иван Вадимович', title: 'Кандидат педагогических наук, доцент, доцент кафедры информационных систем и математических методов в экономике руководитель образовательной программы бакалавриата по специальности 01.03.02 "Прикладная математика и информатика"', email: 'vania_ilin@mail.ru' },
-    { id: 3, pic: "buzmakova2023.jpg", name: 'Бузмакова Мария Михайловна', title: 'Кандидат физико-математических наук, доцент, доцент кафедры прикладной математики и информатики, заместитель заведующего кафедрой прикладной математики и информатики по науке, главный редактор научного журнала «Вестник Пермского университета. Математика. Механика. Информатика»', email: 'mbuzmakova@psu.ru' }
-]
 
 export default function Teachers() {
+    const [teachers, setTeachers] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+
+    useEffect(() => {
+        fetch('http://localhost:8000/teachers/')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ошибка загрузки данных')
+                }
+                return response.json()
+            })
+            .then(data => {
+                setTeachers(data)
+                setLoading(false)
+            })
+            .catch(err => {
+                setError(err.message)
+                setLoading(false)
+            })
+    }, [])
+
+    if (loading) return <p>Загрузка...</p>
+    if (error) return <p>Ошибка: {error}</p>
+
     return (
         <div className='teachers'>
             <h1>Преподаватели</h1>

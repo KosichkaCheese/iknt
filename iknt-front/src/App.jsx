@@ -5,6 +5,10 @@ import Contacts from './pages/Contacts'
 import Teachers from './pages/Teachers'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import AdminLogin from './pages/Admin/AdminLogin'
+import AdminHome from './pages/Admin/AdminHome'
+import AdminTeachers from './pages/Admin/AdminTeachers'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   return (
@@ -16,6 +20,24 @@ function App() {
           <Route path="/about" element={<About />} />
           {/* <Route path="/contacts" element={<Contacts />} /> */}
           <Route path="/teachers" element={<Teachers />} />
+
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminHome />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/teachers"
+            element={
+              <ProtectedRoute>
+                <AdminTeachers />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
       <Footer />
